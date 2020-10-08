@@ -22,8 +22,9 @@ title: TITAN 2D NMR lineshape analysis
 email: c.waudby@ucl.ac.uk
 description: >- # this means to ignore newlines until "baseurl:"
   TITAN, an easy-to-use software package for the analysis of NMR titrations in two dimensions
+author: "Chris Waudby"
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://www.nmr-titan.com" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: chris_waudby
 #github_username:  nmr-titan
 
