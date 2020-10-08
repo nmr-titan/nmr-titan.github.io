@@ -28,23 +28,24 @@ twitter_username: chris_waudby
 #github_username:  nmr-titan
 
 # Build settings
-remote-theme: thelehhman/texture
+#remote-theme: thelehhman/texture
+theme: minima
 plugins:
   - jekyll-feed
 
-texture:
-  title: TITAN
-  tagline: 2D NMR lineshape analysis
-  date_format: "%b %-d, %Y"
-  style: black
-  social_links:
-    twitter: chris_waudby
-  showNav: true
-  navigation:
-    - title: Registration
-      url: "/register"
-    - title: Citing TITAN
-      url: "/citing"
+# texture:
+#   title: TITAN
+#   tagline: 2D NMR lineshape analysis
+#   date_format: "%b %-d, %Y"
+#   style: black
+#   social_links:
+#     twitter: chris_waudby
+#   showNav: true
+#   navigation:
+#     - title: Registration
+#       url: "/register"
+#     - title: Citing TITAN
+#       url: "/citing"
 
 
 # Exclude from processing.
