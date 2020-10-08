@@ -28,7 +28,7 @@ twitter_username: chriswaudby
 #github_username:  nmr-titan
 
 # Build settings
-theme: slate
+theme: jekyll-theme-cayman
 plugins:
   - jekyll-feed
 
