@@ -28,7 +28,7 @@ twitter_username: chris_waudby
 #github_username:  nmr-titan
 
 # Build settings
-theme: minima
+remote-theme: thelehhman/texture
 plugins:
   - jekyll-feed
 
