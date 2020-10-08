@@ -18,7 +18,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: TITAN: 2D NMR lineshape analysis
+title: TITAN 2D NMR lineshape analysis
 email: c.waudby@ucl.ac.uk
 description: >- # this means to ignore newlines until "baseurl:"
   TITAN, an easy-to-use software package for the analysis of NMR titrations in two dimensions
