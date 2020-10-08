@@ -5,6 +5,8 @@
 layout: home
 ---
 
+[![TITAN introduction](https://img.youtube.com/vi/EzMqGR5Hz2w/0.jpg)](https://www.youtube.com/watch?v=EzMqGR5Hz2w)
+
 [Register here to download](register)
 
 Since the 1960s, 1D lineshape fitting has been a key method for the quantitative analysis of titration data. Today however, even applications of 1D lineshape analysis have become limited due to the spectral complexity associated with increasingly large biomolecules.
