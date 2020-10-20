@@ -21,3 +21,7 @@ We have therefore developed TITAN, an easy-to-use software package for the 2D li
 * Use bootstrap methods to calculate error estimates
 
 [Read the paper here](http://www.nature.com/articles/srep24826).
+
+## TITAN userbase (200 labs and growing)
+
+<iframe src="https://www.google.com/maps/d/embed?mid=1_Ud9R5zgK6CWqfltjwVe_25BWsYgNZcv" width="640" height="480"></iframe>
