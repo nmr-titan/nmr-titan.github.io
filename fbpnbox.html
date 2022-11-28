@@ -48,78 +48,82 @@
 				<!-- Main -->
 					<article id="main">
 						<header>
-							<h2>Tutorials</h2>
+							<h2>FBP Nbox walkthrough</h2>
 							<p>NMR TITAN: 2D lineshape analysis</p>
 							<ul class="actions special small">
-								<li><a href="theory.html" class="button">Theory</a></li>
-								<li><a href="tutorials.html" class="button">Tutorials</a></li>
-								<li><a href="casestudies.html" class="button">Case Studies</a></li>
-								<li><a href="faq.html" class="button">FAQs</a></li>
+								<li><a href="tutorials.html" class="button">Back to Tutorials</a></li>
 							</ul>
 						</header>
 						<section class="wrapper style5">
 							<div class="inner">
 
-								<h3>FBP Nbox Walkthrough</h3>
-								<p><span class="image left"><img src="images/lineshape-landscape.png" alt="" /></span>
-									This is an illustrated walthrough of the analysis of a titration of 15N-labelled 
-									FIR RRM1-RRM2 with the FBP Nbox peptide, acquired to investigate the interaction of 
-									FIR RRM1-RRM2 with FBP and FBP3 as part of a broader study of the FUSE system for regulation 
-									of c-myc transcription during the cell cycle (Cukier et al. NSMB 2010). The data and 
-									analysis transcripts are provided in the directory examples/FBPNbox/. </i>.</p>
-								<p>
-									We are developing improved acquisition
-									schemes and easy-to-use analysis methods, including the popular
-									software package <a href="https://www.nmr-titan.com">NMR TITAN</a>,
-									to extract the fullest possible information
-									from your experimental measurements.</p>
+								<h3>Process the raw NMR data</h3>
+								<p> Eleven titration points were acquired in this series of experiments. The protein and ligand concentrations (`P0` and
+									`L0`), together with the number of scans (`ns`) an receiver gain (`rg`) used in the NMR acquisition, are tabulated below.
+									
+									FBP Nbox titration parameters:
+									<center><img src="images/FBPNboxParameters.png" alt="" /></center></p>
+
+								<p> 11 1H,15N-HMQC experiments have been recorded as part of this titration experiment (directories 1-11). A script,
+									`proc-all.com`, is provided to process these in a uniform manner with nmrPipe.
+									Note that several of the parameters in the above script will be required when setting up the 'virtual spectrometer'
+									used in the TITAN analysis: 
+									<ul>
+										<li>600 MHz field strength (base frequencies 599.927 MHz and 60.797 MHz)</li>
+										<li>5N carrier frequency is at 118.959 ppm, with a sweep width of 1823.985 Hz or 30 ppm</li>
+										<li>data are processed with exponential window functions (4 Hz in the direct dimension and 8 Hz in the indirect
+											dimension)</li>
+										<li>128 complex points (`td = 256`) in the indirect dimension, doubled to 256 with linear prediction and doubled again
+											to 512 by zero filling
+											</li>
+									</ul>
+									<p>	Run the script now to process the data, which should make 11 files `test-1.ft2` to `test-11.ft2`. Examine the spectra in
+										nmrDraw to make sure they're been processed and phased correctly.</p>
+									<ul class="actions stacked">
+
+									<center><img src="images/img2fromtutorial.png" alt="" /></center>
 
 								<hr />
 
-								<h3>NMR dynamics & methodology</h3>
-								<p><span class="image right"><img src="images/qq.png" alt="" /></span>
-									We continue to push the capabilities of NMR spectroscopy with the
-									development of new experiments for the analysis of biomolecular dynamics.
-								</p>
+								<h3>Launch NMR TITAN</h3>
 								<p>
-									Recently, this has included the identification of long-lived high-order coherences
-									within methyl groups that can be studied to provide sensitive probes of
-									chemical exchange, improved experimental schemes for the sensitive
-									measurement of cross-correlated relaxation within low-concentration or unstable
-									samples such as ribosome-nascent chain complexes, and the application of
-									optimal design theory to acquire adaptively sampled relaxation measurements.
-								</p>
+									Option 1. Install and run the TITAN app directly.
 
-								<!-- <h4>More detail</h4>
-								<p>Etiam iaculis nulla ipsum, et pharetra libero rhoncus ut. Phasellus rutrum cursus velit, eget condimentum nunc blandit vel. In at pulvinar lectus. Morbi diam ante, vulputate et imperdiet eget, fermentum non dolor. Ut eleifend sagittis tincidunt. Sed viverra commodo mi, ac rhoncus justo. Duis neque ligula, elementum ut enim vel, posuere finibus justo. Vivamus facilisis maximus nibh quis pulvinar. Quisque hendrerit in ipsum id tellus facilisis fermentum. Proin mauris dui, at vestibulum sit amet, auctor bibendum neque.</p> -->
+									Option 2. Run the TITAN app from within MATLAB. The TITAN code must be in a location known to MATLAB. Use
+									the `pathtool` to add the `titan` directory to the path, and then close (or save first to make the addition permanent):
+									
+									Start the main TITAN graphical user interface with the command 'TITAN':
+
+									<center><img src="images/TITANcommandline.png" alt=""/></center>
+									
+									The main interfface shows the analysis pipeline. Commands will become enabled as you progress along the pipeline. At any 
+									point, you can load or save the current session, and some example sessions are also provided to explore.
+
+									<center><img src="images/selebindingmodel.png" alt=""/></center>
+
+								</p>
 
 								<hr />
 
-								<h3>Protein folding and misfolding</h3>
+								<h3>Select a binding model</h3>
 								<p>
-									<span class="image left"><img src="images/ribosome-nmr.png" alt="" /></span>
-									The efficient biosynthesis of proteins, and the subsequent folding to their native
-									states, is a process of central importance to biology. The failure of proteins to reach
-									their native structure can result in disorders arising from loss of function, or in
-									the population of toxic misfolded or aggregated states that are implicated in severe
-									neurological disorders. The Waudby group is interested in applications of NMR spectroscopy
-									to provide unique, residue-specific probes of protein structure and dynamics during
-									protein biosynthesis and folding. 
-								</p>
-								<p>
-									During his time in the Christodoulou group at UCL, Chris developed particular
-									expertise in NMR spectroscopy of co-translational folding within translationally-arrested
-									ribosome-nascent chain complexes. Co-translational folding is a fundamental
-									mechanism for ensuring efficient protein biosynthesis, minimising the wasteful or hazardous
-									formation of misfolded states, but developing a structural understanding of co-translational
-									folding pathways has been a major experimental challenge. By developing and applying
-									advanced NMR methods, we have begun to make progress in understanding the evolution
-									of the free-energy landscape as a nascent chain emerges from the ribosome, and the
-									major role that interactions between the nascent chain and ribosome surface can have on the
-									folding process.
+									TITAN is designed with a flexible core of simulation and fitting routines, which can be combined with a variety of 
+									<strong>pulse programs</strong> and <strong>binding models</strong>.
+
+									<center><img src="images/2StateBindSimImage1.jpg" alt=""/></center>
+
+									Binding models are objects such as Kd values that represent chemical behaviour of species , and which tranlsate concentrations
+									and model parameters such as Kd values into exchange rates of NMR calculations. A variety of binding models are available.
+									Here we're going to use a two-state model, which describes the simple binding process:
+
+									<!-- <center><img src="images/2StateBindSimImage1.jpg" alt=""/></center> -->
+
+									Choose <strong>Select a binding model...</strong> and select the two state model from the list of built-in models:
+
+									<center><img src="images/2State.png" alt=""/></center>
 								</p>
 								
-								<h4>Ex vivo NMR</h4>
+								<!-- <h4>Ex vivo NMR</h4>
 								<p>
 									<span class="image right"><img src="images/ex-vivo.png" alt="" /></span>
 									α<sub>1</sub>-antitrypsin (α<sub>1</sub>AT) is a 52 kDa serine protease inhibitor found at high
@@ -153,12 +157,12 @@
 								<p>Please get in touch if you have a problem you'd like to work together on!</p>
 								<ul class="actions stacked">
 									<li><a href="contact.html" class="button fit primary">Contact</a></li>
-									<!-- <li><a href="#" class="button fit">Learn More</a></li> -->
-								</ul>
+									<li><a href="#" class="button fit">Learn More</a></li> -->
+								<!-- </ul>  -->
 
 							</div>
 						</section>
-					</article>
+					</article> 
 
 				<!-- Footer -->
 				<footer id="footer">
