@@ -57,12 +57,12 @@
 						<section class="wrapper style5">
 							<div class="inner">
 
-								<h3>Process the raw NMR data</h3>
+								<h3>1. Process the raw NMR data</h3>
 								<p> Eleven titration points were acquired in this series of experiments. The protein and ligand concentrations (`P0` and
 									`L0`), together with the number of scans (`ns`) an receiver gain (`rg`) used in the NMR acquisition, are tabulated below.
 									
 									FBP Nbox titration parameters:
-									<center><img src="images/FBPNboxParameters.png" alt="" /></center></p>
+									<center><img src="images/TitrationParameters.png" alt="" width="800" height="500"/></center></p>
 
 								<p> 11 1H,15N-HMQC experiments have been recorded as part of this titration experiment (directories 1-11). A script,
 									`proc-all.com`, is provided to process these in a uniform manner with nmrPipe.
@@ -81,46 +81,81 @@
 										nmrDraw to make sure they're been processed and phased correctly.</p>
 									<ul class="actions stacked">
 
-									<center><img src="images/img2fromtutorial.png" alt="" /></center>
+									<center><img src="images/img2fromtutorial.png" alt="" width="500" height="400"/></center>
 
 								<hr />
 
-								<h3>Launch NMR TITAN</h3>
+								<h3>2. Launch NMR TITAN</h3>
 								<p>
 									Option 1. Install and run the TITAN app directly.
 
 									Option 2. Run the TITAN app from within MATLAB. The TITAN code must be in a location known to MATLAB. Use
 									the `pathtool` to add the `titan` directory to the path, and then close (or save first to make the addition permanent):
 									
-									Start the main TITAN graphical user interface with the command 'TITAN':
+									<p>Start the main TITAN graphical user interface with the command 'TITAN':
 
-									<center><img src="images/TITANcommandline.png" alt=""/></center>
+									<center><img src="images/TITANcommandline.png" alt="" width="600" height="400"/></center></p>
 									
-									The main interfface shows the analysis pipeline. Commands will become enabled as you progress along the pipeline. At any 
+									<p>The main interface shows the analysis pipeline. Commands will become enabled as you progress along the pipeline. At any 
 									point, you can load or save the current session, and some example sessions are also provided to explore.
 
-									<center><img src="images/selebindingmodel.png" alt=""/></center>
+									<center><img src="images/selebindingmodel.png" alt="" width="500" height="400"/></center></p>
 
 								</p>
 
 								<hr />
 
-								<h3>Select a binding model</h3>
+								<h3>3. Select a binding model</h3>
 								<p>
 									TITAN is designed with a flexible core of simulation and fitting routines, which can be combined with a variety of 
 									<strong>pulse programs</strong> and <strong>binding models</strong>.
 
-									<center><img src="images/2StateBindSimImage1.jpg" alt=""/></center>
+									<center><img src="images/2StateBindSimImage1.jpg" alt=""/></center></p>
 
-									Binding models are objects such as Kd values that represent chemical behaviour of species , and which tranlsate concentrations
+									<p>Binding models are objects such as Kd values that represent chemical behaviour of species , and which tranlsate concentrations
 									and model parameters such as Kd values into exchange rates of NMR calculations. A variety of binding models are available.
-									Here we're going to use a two-state model, which describes the simple binding process:
+									Here we're going to use a two-state model, which describes the simple binding process: </p>
 
-									<!-- <center><img src="images/2StateBindSimImage1.jpg" alt=""/></center> -->
+									<p>Choose <strong>Select a binding model...</strong> and select the two state model from the list of built-in models:
 
-									Choose <strong>Select a binding model...</strong> and select the two state model from the list of built-in models:
+									<center><img src="images/2State.png" alt="" width="600" height="400"/></center> </p>
+									
+								</p>
 
-									<center><img src="images/2State.png" alt=""/></center>
+								<hr />
+
+								<h3>4. Set up titration parameters, and load experimental data</h3>
+								<p> 
+									Once a binding model has been selected, the next step in the pipeline will be enabled: 
+
+									<center><img src="images/Setup.png" alt="" width="500" height="400"/></center> 
+
+									</p>
+
+									<p>Choose <strong>Set up titration points and select data...</strong> to bring up the titration dialog:
+
+									<center><img src="images/TitrationSetup.png" alt="" width="600" height="400"/></center></p>
+
+									<p> The columns in this table depend on the binding model. In this instance, protein and ligand concentrations need to
+									be specified, together with NMR acquisition parameters and the location of nmrPipe format data files (as processed
+									earlier).
+
+									Either fill in the table cell by cell, or paste the entire contents at once from the clipboard. Note that the paste function 
+									will overwrite the entire table of contents.
+
+									On selecting a data filename, either manually or by pasting from the clipboard, TITAN will automatically calculate an estimate
+									of noise in the spectrum (based on maximum likelihood estimation of a truncated Gaussiam distribution, using ca. 80% of the observed
+									data, excluding intense regions associated with peaks). This can be manually overwritten if necessary. Note that accurate noise
+									levels are critical for correct weighting of residuals across multiple spectra.
+
+									<center><img src="images/TitrationParametersFromExcel.png" alt="" width="600" height="400"/></center></p>
+
+									<h4>Plot the data to verify a successful import</h4>
+
+									<p>The imported spectra can be quickly plotted as intensity colourmaps using the <strong>Preview spectra</strong> command:</p>
+
+									<!-- <center><img src="images/2State.png" alt="" width="600" height="400"/></center> </p> -->
+									
 								</p>
 								
 								<!-- <h4>Ex vivo NMR</h4>
