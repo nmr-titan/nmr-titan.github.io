@@ -31,9 +31,9 @@
 										<li><a href="intro.html"><i class="icon solid fa-door-open"></i> Introduction</a></li>
 										<li><a href="download.html"><i class="icon solid fa-download"></i> Download</a></li>
 										<li><a href="citing.html"><i class="icon solid fa-book-open"></i> Citing</a></li>
-										<li><a href="theory.html"><i class="icon solid fa-square-root-variable"></i> Theory</a></li>
+										<!-- <li><a href="theory.html"><i class="icon solid fa-square-root-variable"></i> Theory</a></li> -->
 										<li><a href="tutorials.html"><i class="icon solid fa-person-chalkboard"></i> Tutorials</a></li>
-										<li><a href="casestudies.html"><i class="icon solid fa-images"></i> Case Studies</a></li>
+										<!-- <li><a href="casestudies.html"><i class="icon solid fa-images"></i> Case Studies</a></li> -->
 										<li><a href="faq.html"><i class="icon solid fa-circle-question"></i> FAQs</a></li>
 										<li><a href="contact.html"><i class="icon solid fa-envelope"></i> Contact</a></li>
 										<li><a href="https://waudbylab.org"><i class="icon solid fa-flask"></i> Waudby Group</a></li>
@@ -49,7 +49,7 @@
 					<article id="main">
 						<header>
 							<h2>FBP Nbox walkthrough</h2>
-							<p>NMR TITAN: 2D lineshape analysis</p>
+							<!-- <p>NMR TITAN: 2D lineshape analysis</p> -->
 							<ul class="actions special small">
 								<li><a href="tutorials.html" class="button">Back to Tutorials</a></li>
 							</ul>
@@ -144,7 +144,7 @@
 									will overwrite the entire table of contents.
 
 									On selecting a data filename, either manually or by pasting from the clipboard, TITAN will automatically calculate an estimate
-									of noise in the spectrum (based on maximum likelihood estimation of a truncated Gaussiam distribution, using ca. 80% of the observed
+									of noise in the spectrum (based on maximum likelihood estimation of a truncated Gaussian distribution, using ca. 80% of the observed
 									data, excluding intense regions associated with peaks). This can be manually overwritten if necessary. Note that accurate noise
 									levels are critical for correct weighting of residuals across multiple spectra.
 
@@ -154,8 +154,7 @@
 
 									<p>The imported spectra can be quickly plotted as intensity colourmaps using the <strong>Preview spectra</strong> command:</p>
 
-									<!-- <center><img src="images/2State.png" alt="" width="600" height="400"/></center> </p> -->
-									
+									<center><img src="images/Preview.png" alt="" width="500" height="400"/></center>
 								</p>
 
 								<hr />
@@ -197,7 +196,7 @@
 										<li>an ROI must be selected in each spectrum</li>
 										<li>estimates of chemical shifts must be provided for each state in the binding model </li>
 										<li>estimates of linewidths must be provided for each state in the binding model (although generally the default values of 
-											20 s-1 provide an acceptable starting point)</li>
+											20 s<sup>-1</sup> provide an acceptable starting point)</li>
 										<li>overlapping peaks that should be fitted simultaneously should be marked as belonging to the same 'spin group'.
 											Spin groups can be given any label you like, or just left empty to fit the spin by itself.</li>
 									</ul>
@@ -206,7 +205,7 @@
 									</p>
 									<ul class="actions stacked">
 									
-									<!-- <center><img src="images/seleROIs.png" alt=""/></center></p> -->
+									<center><img src="images/ROIeditor.png" alt="" width="650" height="400"/></center></p>
 
 									<p>	Use the zoom and pan tools from the toolbar to center the view on a residue showing interesting exchange behaviour, 
 										then choose <strong>Select ROIs</strong> to begin the process of marking out ROIs.
@@ -228,11 +227,13 @@
 										<p>
 										When an ROI has been selected for the final spectrum, you will be prompted to provide initial estimates of peak
 										positions for each state in the binding model (i.e. free and bound protein), by left-clicking in the left-hand panel:</p>
-									<!-- <center><img src="images/2State.png" alt="" width="600" height="400"/></center> </p> -->
+
+									<center><img src="images/ROIpolygon.png" alt="" width="650" height="400"/></center> </p> 
 
 										<p>Once complete, close the dialog to return to the list of currently defined spins. The links in the top panel can be used
 										to return to the ROI editor, and to include/exclude the spin from any fitting process.</p>
-									<!-- <center><img src="images/2State.png" alt="" width="600" height="400"/></center> </p> -->
+
+									<center><img src="images/EstPeakPositions.png" alt="" width="650" height="400"/></center> </p> 
 
 									<h4>Preparing for fitting</h4>
 
@@ -250,7 +251,7 @@
 										</p>
 										<ul class="actions stacked">
 
-									<!-- <center><img src="images/2State.png" alt="" width="600" height="400"/></center> </p> -->
+									<center><img src="images/FitFreeState.png" alt="" width="600" height="400"/></center> </p> 
 									
 								</p>
 							
@@ -259,13 +260,13 @@
 								<h3>7. Set up model parameters</h3>
 								<p> 
 
-									<!-- <center><img src="images/Setup.png" alt="" width="500" height="400"/></center>  -->
+									<center><img src="images/SetUpModelParam.png" alt="" width="500" height="400"/></center> 
 
 									Model parameters represent global kinetic and thermodynamic constants, such as Kd and koff values, that are
 									required by the selected binding model. Although these aren't going to be fitted at this stage, we must still give them
 									initial values - but the fitting should be turned off:
 
-									<!-- <center><img src="images/Setup.png" alt="" width="500" height="400"/></center>  -->
+									<center><img src="images/FittingOff.png" alt="" width="500" height="400"/></center> 
 
 									</p>
 
@@ -275,25 +276,25 @@
 								<p>	
 									The <strong>Fit!</strong> command should now be enabled:</p> 
 
-									<!-- <center><img src="images/FitCommand.png" alt="" width="500" height="400"/></center>  -->
+									<center><img src="images/Fit.png" alt="" width="500" height="400"/></center>  
 
 									<p> The fitting process will use the current set up as a starting point, but these values will be overwritten by the new
 										fitted values. It's a good idea to save the session at this point so you can go back if necessary. When choosing <strong>Fit!</strong>,
 										you'll be presented with a warning as a reminder of this:</p>
 
-									<!-- <center><img src="images/fittingwarning.png" alt="" width="500" height="400"/></center>  -->
+									<center><img src="images/FittingWarning.png" alt="" width="500" height="300"/></center> 
 
 									<p>	After accepting this warning, you will be prompted to select the spectra to be used in the current fit.
 										For this first step, we only want to use the first spectrum:
 									</p>
 									
-									<!-- <center><img src="images/firstspectrum.jpg" alt=""/></center></p> -->
+									<center><img src="images/FirstSpectrum.png" alt="" width="600" height="400"/></center></p>
 
 									<h4>Fitting outputs</h4>
 
 									<p>While running, a plot of the chi-square residuals is displayed to show the progress of the optimisation algorithm:
 									
-										<!-- <center><img src="images/chisquare.jpg" alt=""/></center></p> -->
+									<center><img src="images/OptimizationPlot.png" alt="" width="600" height="400"/></center></p>
 
 									</p>
 
@@ -301,13 +302,13 @@
 										`ASSIGNMENT_QUANTITY_MODEL STATE`. Note that the reported error comes from the estimated covariance
 										matrix - the use of bootstrap resampling methods (below) is recommended for more robust estimates.
 
-										<!-- <center><img src="images/TITANoutput.jpg" alt=""/></center></p> -->
+									<center><img src="images/titanoutput.png" alt="" width="600" height="400"/></center></p> 
 
 									</p>
 
 									<p> A number of options are provided to plot the fit results:
 
-									<!-- <center><img src="images/optionsfitresults.jpg" alt=""/></center></p> -->
+									<center><img src="images/ViewResults.png" alt="" width="400" height="300"/></center></p>
 
 									</p>
 
@@ -315,14 +316,14 @@
 										fitted peak positions in orange. You can use the standard zoom and pan tools to examine peaks more closely, and
 										toolbar buttons can be used to raise and lower the contour levels:
 
-									<!-- <center><img src="images/plotoverlayscontour.jpg" alt=""/></center></p> -->
+									<center><img src="images/PlotOverlayContour.png" alt="" width="600" height="400"/></center></p> 
 
 									</p>
 									
 									<p>	<strong>Plot overlays (3D)</strong> opens a window showing a 3D view with observed data plotted in grey, and fitted data in red. 
 										Separate windows are opened up for each spin group. Only data within the defined ROIs are shown. 3D views can be rotated using the <strong>Rotate 3D</strong> tool.
 
-									<!-- <center><img src="images/plotoverlays3D.jpg" alt=""/></center>
+									<center><img src="images/PlotOverlay3D.png" alt="" width="600" height="400"/></center>
 									
 									3D plots are useful to check alongside contour plots to give better idea of signal to noise levels, and whether intensities are being fitted accurately - contour plots can be deceptive!</p> -->
 
@@ -335,38 +336,38 @@
 									We use the results of the previous fit as a starting point for second fitting step. 
 									Return to the spin editor, and turn on fitting of bound chemical shifts and all linewidths:</p> 
 
-									<!-- <center><img src="images/spineditor.png" alt="" width="500" height="400"/></center>  -->
+									<!-- <center><img src="images/spineditor.png" alt="" width="500" height="400"/></center> -->
 
 									<p> Similarly, turn on fitting of the model parameters `Kd` and `koff`:</p>
 
-									<!-- <center><img src="images/onkdkoff.png" alt="" width="500" height="400"/></center>  -->
+									<center><img src="images/ONkdkoff.png" alt="" width="500" height="400"/></center> 
 
 									<p>	Now run the fitting process again, using all the spectra:
 									</p>
 									
-									<!-- <center><img src="images/allspectra.jpg" alt=""/></center></p> -->
+									<center><img src="images/AllSpectra.png" alt="" width="600" height="400"/></center></p>
 
 									<p>The fit results now provide estimates of the model parameters, as well as bound state chemical shifts:</p>
 
-									<!-- <center><img src="images/estimatemodelparam.jpg" alt=""/></center></p> -->
+									<center><img src="images/EstimateModelParam.png" alt="" width="600" height="400"/></center></p>
 
 									<h4>Fitting outputs</h4>
 
 									<p> Contour plots are now shown for all spectra in the titration series:
 									
-										<!-- <center><img src="images/contourplots.jpg" alt=""/></center></p> -->
+									<center><img src="images/ContourPlot.png" alt="" width="600" height="400"/></center></p>
 
 									</p>
 
 									<p> As do 3D plots:
 
-										<!-- <center><img src="images/3Dplots.jpg" alt=""/></center></p> -->
+									<center><img src="images/3Dplot.png" alt="" width="600" height="400"/></center></p> 
 
 									</p>
 
 									<p> A side-by-side plot of observed and simulator spectra can also be produced:
 
-									<!-- <center><img src="images/sidebysideplots.jpg" alt=""/></center></p> -->
+									<center><img src="images/SidebySidePlot.png" alt="" width="600" height="400"/></center></p>
 
 									</p>
 
@@ -382,17 +383,17 @@
 
 									<p> An estimate of the running time will be displayed, based on the time required for execuation of the original fit:</p>
 
-									<!-- <center><img src="images/estruntimeerroranalysis.png" alt="" width="500" height="400"/></center>  -->
+									<center><img src="images/ProceedAnalysis.png" alt="" width="500" height="400"/></center> 
 
 									<p>	Once running, a progress bar shows the current status of the calculation. Closing this window will halt the calculation after completion of the 
 										current fit (but note that for complex fits this may take many minutes!):
 									</p>
 									
-									<!-- <center><img src="images/running.jpg" alt=""/></center></p> -->
+									<center><img src="images/EstimatedTimeRemaining.png" alt="" width="600" height="400"/></center></p>
 
 									<p> Once complete, a number of results may be displayed:</p>
 
-									<!-- <center><img src="images/viewresults.jpg" alt=""/></center></p> -->
+									<center><img src="images/ErrorAnalysisSummary.png" alt="" width="600" height="400"/></center></p> 
 
 									<p> The summary of results shows the mean and standard error of parameters determined from the bootstrap analysis:</p>
 
@@ -400,13 +401,13 @@
 
 									<p> Results of each individual fit may also be tabulated:</p>
 
-									<!-- <center><img src="images/tabulatedresults.jpg" alt=""/></center></p> -->
+									<center><img src="images/TabulateParameters.png" alt="" width="600" height="400"/></center></p>
 
 									<p> Finally, the correlations between estimates of various parameters may be investigated via the covariance matrix. 
 										The data cursor may be used to explore points of interest. In this case, we observe that estimtes of the Kd are 
 										strongly correlated with the bound state chemical shift:</p>
 
-									<!-- <center><img src="images/tabulatedresults.jpg" alt=""/></center></p> -->
+									<center><img src="images/CorrelationPlot.png" alt="" width="600" height="400"/></center></p>
 
 									<p> Upon a more detailed analysis with many more spins however (e.g. the provided example `TITAN_session_fitted.mat`, 
 										based on global analysis of 25 spins), the covariance structure may be improved:</p>
