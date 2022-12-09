@@ -1,0 +1,165 @@
+<!DOCTYPE HTML>
+<!--
+	Spectral by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>NMR TITAN | Download</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Page Wrapper -->
+			<div id="page-wrapper">
+
+				<!-- Header -->
+				<header id="header">
+					<h1><a href="index.html">NMR TITAN</a></h1>
+					<nav id="nav">
+						<ul>
+							<li class="special">
+								<a href="#menu" class="menuToggle"><span>Menu</span></a>
+								<div id="menu">
+									<ul>
+										<li><a href="index.html"><i class="icon solid fa-home"></i> Home</a></li>
+										<li><a href="index.html#news"><i class="icon solid fa-newspaper"></i> News</a></li>
+										<li><a href="intro.html"><i class="icon solid fa-door-open"></i> Introduction</a></li>
+										<li><a href="download.html"><i class="icon solid fa-download"></i> Download</a></li>
+										<li><a href="citing.html"><i class="icon solid fa-book-open"></i> Citing</a></li>
+										<!-- <li><a href="theory.html"><i class="icon solid fa-square-root-variable"></i> Theory</a></li> -->
+										<li><a href="tutorials.html"><i class="icon solid fa-person-chalkboard"></i> Tutorials</a></li>
+										<!-- <li><a href="casestudies.html"><i class="icon solid fa-images"></i> Case Studies</a></li> -->
+										<li><a href="faq.html"><i class="icon solid fa-circle-question"></i> FAQs</a></li>
+										<li><a href="contact.html"><i class="icon solid fa-envelope"></i> Contact</a></li>
+										<li><a href="https://waudbylab.org"><i class="icon solid fa-flask"></i> Waudby Group</a></li>
+									</ul>
+								</div>
+							</li>
+						</ul>
+					</nav>
+				</header>
+
+
+				<!-- Main -->
+					<article id="main">
+						<header>
+							<h2>Frequently Asked Questions</h2>
+							<!-- <p>NMR TITAN: 2D lineshape analysis</p> -->
+						</header>
+						<section class="wrapper style5">
+							<div class="inner">
+
+								<h3>Data Analysis</h3>
+
+									<h4>What pulse sequences are implemented in TITAN?</h4>
+
+										<p>The following pulse sequences are implemented in TITAN: HSQC, HMQC, HZQC/HDQC, gHMQC, CPMG-HSQC, CPMG-gHMQC, COSY, and NOESY pulse sequences.</p>
+
+										<p>However, to the extent that relaxation or chemical exchange during magnetization transfer steps can be neglected, other experiments such as transverse relaxation-optimized spectroscopy (TROSY) 
+										   and sensitivity-enhanced HSQCs may still be analyzed as if acquired with a regular HSQC pulse sequence, but the user should be aware of the additional assumptions involved in such an analysis.</p>
+
+									<h4>What is the optimal shape and selection of a ROI?</h4>
+								
+										<p> ROIs should extend approximately two to three linewidths from the center of resonances and contain the entire region of the spectrum within 
+										which resonances are observed across the titration.</p>
+
+									 	<p>Overly large ROIs will result in increased noise, slower fitting calculations, and potentially inadvertant overlaps with 
+										adjacent resonances. Conversely, tightly cropped ROIs will reduce the accuracy of fitted linewidths.</p>
+
+								<hr />
+
+								<h3>Data Acquisition</h3>
+
+									<h4>What should the concentrations of my samples be?</h4>
+
+										<p> Optimal results are obtained when the protein concentration is comparable to K<sub>d</sub>. Protein concentrations of at least 10 μM are 
+											required, but higher protein concentrations, around 50-100μ M, will generally allow sufficiently high signal-to-noise ratios to be obtained in 
+											less than an hour. The final ligand concentration should be sufficient to fully saturate the binding: the greater of at least three times the Kd or 
+											two equivalents relative to the protein concentration.</p>
+	
+									<h4>How many titration points should be acquired?</h4>
+								
+										<p> Approximately 8-12 titration points should be acquired. However, these guidelines are based on a simple 1:1 association reaction, P + L ⇌ PL. 
+											The identification and analysis of more complex binding mechanisms may benefit from a greater number of points or, for example, 
+											varying the protein concentration in addition to that of the ligand.</p>
+
+								<!-- <h3>How to Install & Run TITAN as a Stand-Alone Application</h3>
+								<ol>
+									<li>
+										Open the folder you have downloaded and locate the installation scripts under "bin".
+										<p>
+											<div style="text-align: center;">
+											<img src="images/TITAN>bin.png" width="400" height="200"/>
+											</div>
+										</p>
+									</li>
+									<li>
+										Select the appropriate installer to install TITAN. Please note that TITAN is only available as a 
+										stand-alone application for OS X and linux.
+									</li>
+									<li>
+										Launch the TITAN app!
+									</li>
+								</ol>
+
+								<h3>How to Run the TITAN app from within MATLAB</h3>
+								<ol>
+									<li>
+										The TITAN code must be in a location known to MATLAB. Use the <a href="https://uk.mathworks.com/help/matlab/ref/pathtool.html">'pathtool'</a>
+										to add the 'titan' directory to the path, and then close (or save first to make the addition permanent).
+										<p>
+											<div style="text-align: center;">
+											<img src="images/pathtool.png" width="400" height="275"/>
+											</div>
+										</p>
+									</li>
+									<li>
+										Start the main TITAN graphical user interface with the command 'TITAN'.
+										<p>
+											<div style="text-align: center;">
+											<img src="images/TITANcommandline.png" width="600" height="400"/>
+											</div>
+										</p>
+									</li>
+								</ol>
+
+								<h4>Have a problem?</h4>
+								<p>
+									Please <a href="contact.html">contact</a> Chris Waudby in case of problems downloading, installing, or running TITAN.
+								</p> -->
+
+							</div>
+						</section>
+					</article>
+
+				<!-- Footer -->
+				<footer id="footer">
+					<ul class="icons">
+						<li><a href="https://www.twitter.com/chris_waudby" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="contact.html" class="icon solid fa-envelope"><span class="label">Contact</span></a></li>
+					</ul>
+					<ul class="copyright">
+						<li>&copy; NMR TITAN 2022</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				</footer>
+
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			<script src="https://kit.fontawesome.com/2ea35fb7c9.js" crossorigin="anonymous"></script>
+
+	</body>
+</html>

@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Spectral by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>NMR TITAN | Tutorials</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Page Wrapper -->
+			<div id="page-wrapper">
+
+				<!-- Header -->
+				<header id="header">
+					<h1><a href="index.html">NMR TITAN</a></h1>
+					<nav id="nav">
+						<ul>
+							<li class="special">
+								<a href="#menu" class="menuToggle"><span>Menu</span></a>
+								<div id="menu">
+									<ul>
+										<li><a href="index.html"><i class="icon solid fa-home"></i> Home</a></li>
+										<li><a href="index.html#news"><i class="icon solid fa-newspaper"></i> News</a></li>
+										<li><a href="intro.html"><i class="icon solid fa-door-open"></i> Introduction</a></li>
+										<li><a href="download.html"><i class="icon solid fa-download"></i> Download</a></li>
+										<li><a href="citing.html"><i class="icon solid fa-book-open"></i> Citing</a></li>
+										<!-- <li><a href="theory.html"><i class="icon solid fa-square-root-variable"></i> Theory</a></li> -->
+										<li><a href="tutorials.html"><i class="icon solid fa-person-chalkboard"></i> Tutorials</a></li>
+										<!-- <li><a href="casestudies.html"><i class="icon solid fa-images"></i> Case Studies</a></li> -->
+										<li><a href="faq.html"><i class="icon solid fa-circle-question"></i> FAQs</a></li>
+										<li><a href="contact.html"><i class="icon solid fa-envelope"></i> Contact</a></li>
+										<li><a href="https://waudbylab.org"><i class="icon solid fa-flask"></i> Waudby Group</a></li>
+									</ul>
+								</div>
+							</li>
+						</ul>
+					</nav>
+				</header>
+
+
+				<!-- Main -->
+					<article id="main">
+						<header>
+							<h2>2-State Binding Simulation</h2>
+							<!-- <p>NMR TITAN: 2D lineshape analysis</p> -->
+							<ul class="actions special small">
+								<li><a href="tutorials.html" class="button">Back to Tutorials</a></li>
+							</ul>
+						</header>
+						<section class="wrapper style5">
+							<div class="inner">
+
+								<h3>1. Load the simulation script</h3>
+								<p> Load the example script, <b>examples/simulations/example1_twostate.m</b> in the MATLAB editor.
+
+									<center><img src="images/TitrationParameters.png" alt="" width="800" height="500"/></center></p>
+
+								<p> Example scripts are written in sections, separated by % marks, which should be run sequentially, inspecting the
+									input and output at each stage. Each section can be executed using the <b>Run Section</b> command. The remainder
+									of this tutorial is given as a walkthrough of these sections.</p>	
+								<hr />
+
+								<h3>2. Set up a pulse program</h3>
+									<p><b>Pulse program</b> objects contain the code to simulate the evolution of magnetisation for a given experiment type. 
+									   They must be initialised with experimental acquisition parameters such as magnetic field strength, spectral width, number of points, 
+									   etc.</p>
+									   
+									<p> Pulse programs are prepared based on a collection of parameters (technically, arranged in a structure), e.g.:
+
+										<center><img src="images/TITANcommandline.png" alt="" width="600" height="400"/></center></p>
+									
+									<p> Currently, HSQC, HMQC and CPMG-HSQC pulse programs are implemented in TITAN. They can be selected by
+										modifying the final line above.</p> 
+
+									<p> <i>Once you've run through the whole tutorial, try coming back and comparing the effect of different pulse programs!
+										Also see what happens when you vary the magnetic field strength (<b>'setup.bf'</b>).</i></p>
+							
+								<hr />
+
+								<h3>3. Create the binding model</h3>
+
+									<p> <strong>Binding models</strong> are objects that represent the chemical behaviour of species, and which translate concentrations
+										and model parameters such as Kd values into exchange rates for NMR calculations.
+
+									<p> A variety of binding models are available. Here we're going to use bmTwoState, which describes the simple two-state binding process 
+										detailed above, and can be declared and initialised:</p>
+		
+										<!-- <center><img src="images/2State.png" alt="" width="600" height="400"/></center></p> -->
+
+									<p> <b>Online help</b> is available for all objects and functions in TITAN. For example, to find out more about the two-state
+									    binding model, such as the parameters it requires, run </b>'help bmTwoState'</b>:</p>
+
+									<!-- <center><img src="images/2State.png" alt="" width="600" height="400"/></center> </p> -->
+
+									<p> Examining the new binding model object in the command window can also yield some information:</p>
+				
+									<!-- <center><img src="images/2State.png" alt="" width="600" height="400"/></center> </p> -->
+
+								<hr />
+
+								<h3>4. Set up titration conditions</h3>
+								<p> <b>Titration point</b> structures provide a list of protein and ligand concentrations to be simulated, together with
+									individual spectral parameters such as the number of scans 'ns' and (optionally) the receiver gain 'rg'.</p>
+
+								<p> From the documentation above, we can see that our two-state binding model requires titration points to specify
+								    'P0', the protein concentration, and 'L0', the ligand concentration.</p>
+
+								<p> <i>N.B. the units chosen here for protein and ligand concentrations must be used consistently elsewhere in the script!</i></p>
+
+								<p> For our simulation, we are going to use a protein concentration of 100 uM, and a range of ligand concentrations
+								    from 0 to 220 uM. Every spectrum has an equal number of scans (set to an arbitrary value of 1 because only
+								    relative intensities are ultimately important).</p>
+
+								<p> Note the final line in the code above: it is required to combine the various NMR parameters and concentrations
+								    into overall intensity scaling factors, for comparison between experiments.</p>
+
+								<p> The collection of titration points can be examined in the parameter editor:Once a binding model has been selected, the next step 
+								    in the pipeline will be enabled:</p> 
+
+									<!-- <center><img src="images/Setup.png" alt="" width="500" height="400"/></center>  -->
+
+								<hr />
+
+								<h3>5. Create a spin system and set chemical shifts</h3>
+								<p> We are going to simulate exchange for a single residue, with free chemical shifts of 7.55 ppm (<sup>1</sup>H) and 114 ppm
+								    (<sup>15</sup>N), and bound chemical shifts of 7.45 ppm (<sup>1</sup>H) and 118 ppm (<sup>15</sup>N). We will assign all states 
+								    a uniform R2 (linewidth) of 20 s<sup>-1</sup>.
+									
+									<p> Each residue is represented in TITAN as a <b>SpinSystem</b>, which completely specifies all chemical shift and
+									    relaxation information, for every state in the binding model. Having set up our chemical shifts above, it is
+									    straightforward to create a list of spin systems:</p>
+
+									<p> Like other objects, the collection of spin systems can be examined in the variable editor:</p>
+
+									<!-- <center><img src="images/HMQCacqparameters.png" alt="" width="200" height="400"/></center> -->
+
+									<p><i>Try experimenting and changing the chemical shifts or linewidths!</i></p> 
+										
+								<hr />
+
+								<h3>6. Set up binding model parameters</h3>
+
+									<center><img src="images/seleROIs.png" alt="" width="500" height="400"/></center>
+
+								<p> The required parameters depends on the choice of binding model. For a simple two-state binding reaction, the
+									dissociation constant, Kd, and dissociation rate, koff, need to be specified:</p>
+
+								<p>	Once parameters have been selected, they must be combined into a <b>model parameters</b> object using the binding
+									model created earlier:</p>
+
+								<p><i>Try experimenting and varying the Kd and koff!</i></p>
+
+								<hr />
+
+								<h3>7. Run the Simulation</h3>
+
+								<p> Simulations are carried out using a <b>Simulator</b> object, prepared with the list of titration points, the binding model,
+									and the pulse program parameters. Once the simulator is initialised, a cell array containing the simulated 2D spectra
+									can then be calculated:</p>
+
+								<hr />
+
+								<h3>8. Plot the Results</h3>
+								<p> The simulated spectra can be plotted in any convenient way using the full MATLAB functionality. A simple plotting
+									routine is included in the example scripts to produce a series of contour plots, overlaid with the pre-defined
+									positions of the free and bound states:
+								</p>
+
+								<p><b>Congratulations!</b> You've simulated your first titration series:</p>
+
+								<!-- <center><img src="images/Fit.png" alt="" width="500" height="400"/></center>   -->
+
+								<hr />
+
+								<h3>9. Varying the model parameters</h3>
+
+								<p>	Try exploring variations in model parameters, magnetic field strength, chemical shifts, etc... For example, if the
+									dissociation rate is increased ten-fold to 1000 s<sup>-1</sup>, fast-exchange behaviour is clearly observed:</p> 
+
+									<!-- <center><img src="images/spineditor.png" alt="" width="500" height="400"/></center> -->
+
+									<p> In contrast, if the dissociation rate is reduced ten-fold to 10 s<sup>-1</sup>, slow exchange behaviour is observed:</p>
+
+									<!-- <center><img src="images/ONkdkoff.png" alt="" width="500" height="400"/></center>  -->
+
+								<hr />
+
+								<h3>Next Steps</h3>
+								
+								<p>	Now try exploring some of the other examples, including simulation of more complex binding models such as
+								protein dimerisation, or examine the fitting of experimental data for the interaction of FBP and Nbox.</p> 
+
+							</div>
+						</section>
+					</article> 
+
+				<!-- Footer -->
+				<footer id="footer">
+					<ul class="icons">
+						<li><a href="https://www.twitter.com/chris_waudby" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="contact.html" class="icon solid fa-envelope"><span class="label">Contact</span></a></li>
+					</ul>
+					<ul class="copyright">
+						<li>&copy; NMR TITAN 2022</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				</footer>
+
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			<script src="https://kit.fontawesome.com/2ea35fb7c9.js" crossorigin="anonymous"></script>
+
+	</body>
+</html>
