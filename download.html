@@ -53,8 +53,9 @@
 						</header>
 						<section class="wrapper style5">
 							<div class="inner">
+								<p>NMR TITAN is available to <a href="#downloading">download</a>, or can be run directly through <a href="https://nmrbox.org/">NMRbox</a>.</p>
 
-								<h3>How to Download TITAN</h3>
+								<h3 id="downloading"></a>Downloading TITAN</h3>
 								<ol>
 									<li>
 										TITAN is free for academic users! Register <a href="https://docs.google.com/forms/d/e/1FAIpQLSeN-FoEdoUlxGZ-H5XfXiYU5wAhJV6U2LCOqr7gh4ZXDadGNQ/viewform">here</a> 
@@ -72,13 +73,16 @@
 												<img src="images/Bitbucket.png" width="850" height="300"/>
 												</div>
 											</p>
-										You can opt to download <a href="https://bitbucket.org/cwaudby/titan/get/master.zip">the most stable version of TITAN</a>, 
-										<a href="https://bitbucket.org/cwaudby/titan/get/develop.zip">the development version</a>, or run TITAN in
-										<a href="https://nmrbox.org/">NMRbox</a>.
+									</li>
+									<li>
+										Select between two versions of TITAN that are available for download: the stable branch, or the development version. This may contain additional features, but is not guaranteed to be free of bugs!
+									</li>
+									<li>
+										Once downloaded, TITAN may be installed as a <a href="#stand-alone">stand-alone application</a> for Mac or Linux, or can be run <a href="#matlab">directly through MATLAB</a>.
 									</li>
 								</ol>
 
-								<h3>How to Install & Run TITAN as a Stand-Alone Application</h3>
+								<h4 id="stand-alone">A. Installing TITAN as a stand-alone application</h4>
 								<ol>
 									<li>
 										Open the folder you have downloaded and locate the installation scripts under "bin".
@@ -89,19 +93,21 @@
 										</p>
 									</li>
 									<li>
-										Select the appropriate installer to install TITAN. Please note that TITAN is only available as a 
-										stand-alone application for OS X and linux.
+										Select the appropriate installer (mac/linux) to install TITAN. <br/><i>Mac users may need to open the installer by right-clicking to bypass security checks.</i>
 									</li>
 									<li>
-										Launch the TITAN app!
+										Once installed, double click the application icon to launch TITAN.
 									</li>
 								</ol>
 
-								<h3>How to Run the TITAN app from within MATLAB</h3>
+								<h4 id="matlab">B. Running TITAN within MATLAB</h4>
 								<ol>
 									<li>
-										The TITAN code must be in a location known to MATLAB. Use the <a href="https://uk.mathworks.com/help/matlab/ref/pathtool.html">'pathtool'</a>
-										to add the 'titan' directory to the path, and then close (or save first to make the addition permanent).
+										TITAN source code is contained within the <code>titan</code> subdirectory of the downloaded package.
+									</li>
+									<li>
+										The TITAN code must be in a location known to MATLAB. Use <a href="https://uk.mathworks.com/help/matlab/ref/pathtool.html"><code>pathtool</code></a>
+										to add the <code>titan</code> directory to the path, and then close (or save first to make the addition permanent).
 										<p>
 											<div style="text-align: center;">
 											<img src="images/pathtool.png" width="400" height="275"/>
@@ -109,7 +115,7 @@
 										</p>
 									</li>
 									<li>
-										Start the main TITAN graphical user interface with the command 'TITAN'.
+										Start the main TITAN graphical user interface with the command <code>TITAN</code>.
 										<p>
 											<div style="text-align: center;">
 											<img src="images/TITANcommandline.png" width="600" height="400"/>
@@ -131,8 +137,6 @@
 				<footer id="footer">
 					<ul class="icons">
 						<li><a href="https://www.twitter.com/chris_waudby" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-						<li><a href="https://www.youtube.com/channel/UCIy84QJPphDhbNgPyIJZ5aA" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
-						<li><a href="https://github.com/chriswaudby/" class="icon brands fa-github"><span class="label">Github</span></a></li>
 						<li><a href="contact.html" class="icon solid fa-envelope"><span class="label">Contact</span></a></li>
 					</ul>
 					<ul class="copyright">
