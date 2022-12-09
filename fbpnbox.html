@@ -58,26 +58,26 @@
 							<div class="inner">
 
 								<h3>1. Process the raw NMR data</h3>
-								<p> Eleven titration points were acquired in this series of experiments. The protein and ligand concentrations (`P0` and
-									`L0`), together with the number of scans (`ns`) an receiver gain (`rg`) used in the NMR acquisition, are tabulated below.
+								<p> Eleven titration points were acquired in this series of experiments. The protein and ligand concentrations ('P0' and
+									'L0'), together with the number of scans ('ns') an receiver gain ('rg') used in the NMR acquisition, are tabulated below.
 									
 									FBP Nbox titration parameters:
 									<center><img src="images/TitrationParameters.png" alt="" width="800" height="500"/></center></p>
 
-								<p> 11 1H,15N-HMQC experiments have been recorded as part of this titration experiment (directories 1-11). A script,
-									`proc-all.com`, is provided to process these in a uniform manner with nmrPipe.
+								<p> 11 <sup>1</sup>H,<sup>15</sup>N-HMQC experiments have been recorded as part of this titration experiment (directories 1-11). 
+									A script, 'proc-all.com', is provided to process these in a uniform manner with NMRPipe.
 									Note that several of the parameters in the above script will be required when setting up the 'virtual spectrometer'
 									used in the TITAN analysis: 
 									<ul>
 										<li>600 MHz field strength (base frequencies 599.927 MHz and 60.797 MHz)</li>
-										<li>5N carrier frequency is at 118.959 ppm, with a sweep width of 1823.985 Hz or 30 ppm</li>
+										<li><sup>15</sup>N carrier frequency is at 118.959 ppm, with a sweep width of 1823.985 Hz or 30 ppm</li>
 										<li>data are processed with exponential window functions (4 Hz in the direct dimension and 8 Hz in the indirect
 											dimension)</li>
-										<li>128 complex points (`td = 256`) in the indirect dimension, doubled to 256 with linear prediction and doubled again
+										<li>128 complex points ('td = 256') in the indirect dimension, doubled to 256 with linear prediction and doubled again
 											to 512 by zero filling
 											</li>
 									</ul>
-									<p>	Run the script now to process the data, which should make 11 files `test-1.ft2` to `test-11.ft2`. Examine the spectra in
+									<p>	Run the script now to process the data, which should make 11 files 'test-1.ft2' to 'test-11.ft2'. Examine the spectra in
 										nmrDraw to make sure they're been processed and phased correctly.</p>
 									<ul class="actions stacked">
 
@@ -86,42 +86,36 @@
 								<hr />
 
 								<h3>2. Launch NMR TITAN</h3>
-								<p>
-									Option 1. Install and run the TITAN app directly.
+									<p><b>Option 1.</b> Install and run the TITAN app directly.</p>
 
-									Option 2. Run the TITAN app from within MATLAB. The TITAN code must be in a location known to MATLAB. Use
-									the `pathtool` to add the `titan` directory to the path, and then close (or save first to make the addition permanent):
+									<p><b>Option 2.</b> Run the TITAN app from within MATLAB.</p>
 									
-									<p>Start the main TITAN graphical user interface with the command 'TITAN':
+										<p>Start the main TITAN graphical user interface with the command 'TITAN'.</p>
 
-									<center><img src="images/TITANcommandline.png" alt="" width="600" height="400"/></center></p>
+										<center><img src="images/TITANcommandline.png" alt="" width="600" height="400"/></center></p>
 									
-									<p>The main interface shows the analysis pipeline. Commands will become enabled as you progress along the pipeline. At any 
-									point, you can load or save the current session, and some example sessions are also provided to explore.
+										<p>The main interface shows the analysis pipeline. Commands will become enabled as you progress along the pipeline. At any 
+										point, you can load or save the current session, and some example sessions are also provided to explore.
 
-									<center><img src="images/selebindingmodel.png" alt="" width="500" height="400"/></center></p>
-
-								</p>
+										<center><img src="images/selebindingmodel.png" alt="" width="500" height="400"/></center></p>
 
 								<hr />
 
 								<h3>3. Select a binding model</h3>
-								<p>
-									TITAN is designed with a flexible core of simulation and fitting routines, which can be combined with a variety of 
+
+									<p>TITAN is designed with a flexible core of simulation and fitting routines, which can be combined with a variety of 
 									<strong>pulse programs</strong> and <strong>binding models</strong>.
 
 									<center><img src="images/2StateBindSimImage1.jpg" alt=""/></center></p>
 
 									<p>Binding models are objects such as Kd values that represent chemical behaviour of species , and which tranlsate concentrations
 									and model parameters such as Kd values into exchange rates of NMR calculations. A variety of binding models are available.
-									Here we're going to use a two-state model, which describes the simple binding process: </p>
+									Here we're going to use a two-state model, which describes the simple binding process: P + L ⇌ PL.</p>
 
 									<p>Choose <strong>Select a binding model...</strong> and select the two state model from the list of built-in models:
 
 									<center><img src="images/2State.png" alt="" width="600" height="400"/></center> </p>
-									
-								</p>
-
+				
 								<hr />
 
 								<h3>4. Set up titration parameters, and load experimental data</h3>
@@ -137,7 +131,7 @@
 									<center><img src="images/TitrationSetup.png" alt="" width="600" height="400"/></center></p>
 
 									<p> The columns in this table depend on the binding model. In this instance, protein and ligand concentrations need to
-									be specified, together with NMR acquisition parameters and the location of nmrPipe format data files (as processed
+									be specified, together with NMR acquisition parameters and the location of NMRPipe format data files (as processed
 									earlier).
 
 									Either fill in the table cell by cell, or paste the entire contents at once from the clipboard. Note that the paste function 
@@ -170,12 +164,12 @@
 										etc. Once prepared with these acquisition parameters, the pulse program can be plugged into the simulation and
 										fitting routines, together with a binding model prepared above.</p>
 
-									<p>In this set of measurements, data were acquired using a 1H,15N-HMQC experiment:
+									<p>In this set of measurements, data were acquired using a <sup>1</sup>H,<sup>15</sup>N-HMQC experiment:
 
 									<center><img src="images/seleHMQC.png" alt=" "width="200" height="400"/></center></p>
 
 									<p>Once selected, a number of acquisition parameters must be specified. Most of these should be correctly determined
-									from the imported nmrPipe data, but note particularly that the scalar coupling constants must be specified by hand:
+									from the imported NMRPipe data, but note particularly that the scalar coupling constants must be specified by hand:
 										
 									<center><img src="images/HMQCacqparameters.png" alt="" width="200" height="400"/></center></p> 
 
@@ -186,12 +180,11 @@
 									<center><img src="images/seleROIs.png" alt="" width="500" height="400"/></center>
 
 								<p>	For every <strong>spin system</strong> (residue) and every spectrum a <strong>region of interest</strong> (ROI) must be defined to select the
-									datapoints used for fitting. Each spinsystem is represented in TITAN by sets of I (direct) and S (indirect) spin
-									chemical shifts and linewidths (R2 values). Each state specified by a binding model must have chemical shifts and
+									datapoints used for fitting. Each spin system is represented in TITAN by sets of direct (I) and indirect (S) spin
+									chemical shifts and linewidths (R21, R2S). Each state specified by a binding model must have chemical shifts and
 									linewidths associated with it, and initial estimates of these must be provided before fitting.</p>
 
 									<p>So, when adding a residue to be fitted, several things need to be set up:</p>
-
 									<ul>
 										<li>an ROI must be selected in each spectrum</li>
 										<li>estimates of chemical shifts must be provided for each state in the binding model </li>
@@ -240,11 +233,11 @@
 									<p>Because there are so many free parameters around, it's important to constrain them as much as is reasonable, to try
 										and prevent the volume of parameter space exploding. Here, we take a 2-step approach to the fitting problem:
 
-										<ul>
-											<li>1. Using only the first spectrum (recorded in the absence of ligand), fit only chemical shifts and linewidths for the first state of the binding model (i.e. free protein).</li>
-											<li>2. Now use all the spectra to optimise the chemical shifts and linewidths of the second state (i.e. bound protein),
+										<ol>
+											<li>Using only the first spectrum (recorded in the absence of ligand), fit only chemical shifts and linewidths for the first state of the binding model (i.e. free protein).</li>
+											<li>Now use all the spectra to optimise the chemical shifts and linewidths of the second state (i.e. bound protein),
 												together with the model parameters (Kd and koff). </li>
-										</ul>
+										</ol>
 										<p>	The bottom panel in the spin editor provides control over which parameters should be optimised in the fitting
 											process. In accordance with the strategy above, select to only fit parameters associated with the free state of the
 											protein:
@@ -252,9 +245,7 @@
 										<ul class="actions stacked">
 
 									<center><img src="images/FitFreeState.png" alt="" width="600" height="400"/></center> </p> 
-									
-								</p>
-							
+
 								<hr />
 
 								<h3>7. Set up model parameters</h3>
@@ -279,55 +270,45 @@
 									<center><img src="images/Fit.png" alt="" width="500" height="400"/></center>  
 
 									<p> The fitting process will use the current set up as a starting point, but these values will be overwritten by the new
-										fitted values. It's a good idea to save the session at this point so you can go back if necessary. When choosing <strong>Fit!</strong>,
-										you'll be presented with a warning as a reminder of this:</p>
+										fitted values. It's a good idea to hit <b>"Save session..."</b> at this point so you can go back if necessary.</p> 
+										
+									<p>When choosing <strong>Fit!</strong>, you'll be presented with a warning as a reminder of this:</p>
 
-									<center><img src="images/FittingWarning.png" alt="" width="500" height="300"/></center> 
+									<center><img src="images/FittingWarning.png" alt="" width="600" height="300"/></center> 
 
 									<p>	After accepting this warning, you will be prompted to select the spectra to be used in the current fit.
 										For this first step, we only want to use the first spectrum:
-									</p>
 									
-									<center><img src="images/FirstSpectrum.png" alt="" width="600" height="400"/></center></p>
+									<center><img src="images/FirstSpectrum.png" alt="" width="300" height="400"/></center></p>
 
 									<h4>Fitting outputs</h4>
 
 									<p>While running, a plot of the chi-square residuals is displayed to show the progress of the optimisation algorithm:
 									
-									<center><img src="images/OptimizationPlot.png" alt="" width="600" height="400"/></center></p>
-
-									</p>
+									<center><img src="images/OptimizationPlot.png" alt="" width="500" height="400"/></center></p>
 
 									<p> On completion, a list of the fitted parameters is displayed in a new window. Parameter labels are of the form:
-										`ASSIGNMENT_QUANTITY_MODEL STATE`. Note that the reported error comes from the estimated covariance
+										'ASSIGNMENT_QUANTITY_MODEL STATE'. Note that the reported error comes from the estimated covariance
 										matrix - the use of bootstrap resampling methods (below) is recommended for more robust estimates.
 
 									<center><img src="images/titanoutput.png" alt="" width="600" height="400"/></center></p> 
 
-									</p>
-
 									<p> A number of options are provided to plot the fit results:
 
-									<center><img src="images/ViewResults.png" alt="" width="400" height="300"/></center></p>
-
-									</p>
+									<center><img src="images/ViewResults.png" alt="" width="400" height="250"/></center></p>
 
 									<p>	<strong>Plot overlays (contour)</strong> opens a window showing the original spectrum in blue, with fits superimposed in red, and
 										fitted peak positions in orange. You can use the standard zoom and pan tools to examine peaks more closely, and
 										toolbar buttons can be used to raise and lower the contour levels:
 
 									<center><img src="images/PlotOverlayContour.png" alt="" width="600" height="400"/></center></p> 
-
-									</p>
 									
 									<p>	<strong>Plot overlays (3D)</strong> opens a window showing a 3D view with observed data plotted in grey, and fitted data in red. 
 										Separate windows are opened up for each spin group. Only data within the defined ROIs are shown. 3D views can be rotated using the <strong>Rotate 3D</strong> tool.
 
-									<center><img src="images/PlotOverlay3D.png" alt="" width="600" height="400"/></center>
+									<center><img src="images/PlotOverlay3D.png" alt="" width="550" height="450"/></center>
 									
-									3D plots are useful to check alongside contour plots to give better idea of signal to noise levels, and whether intensities are being fitted accurately - contour plots can be deceptive!</p> -->
-
-									</p>
+									3D plots are useful to check alongside contour plots to give better idea of signal to noise levels, and whether intensities are being fitted accurately - contour plots can be deceptive!</p>
 
 								<hr />
 
@@ -338,14 +319,14 @@
 
 									<!-- <center><img src="images/spineditor.png" alt="" width="500" height="400"/></center> -->
 
-									<p> Similarly, turn on fitting of the model parameters `Kd` and `koff`:</p>
+									<p> Similarly, turn on fitting of the model parameters 'Kd' and 'koff':</p>
 
 									<center><img src="images/ONkdkoff.png" alt="" width="500" height="400"/></center> 
 
 									<p>	Now run the fitting process again, using all the spectra:
 									</p>
 									
-									<center><img src="images/AllSpectra.png" alt="" width="600" height="400"/></center></p>
+									<center><img src="images/AllSpectra.png" alt="" width="300" height="400"/></center></p>
 
 									<p>The fit results now provide estimates of the model parameters, as well as bound state chemical shifts:</p>
 
@@ -381,36 +362,35 @@
 
 									<!-- <center><img src="images/erroranalysissetup.png" alt="" width="500" height="400"/></center>  -->
 
-									<p> An estimate of the running time will be displayed, based on the time required for execuation of the original fit:</p>
+									<p> An estimate of the running time will be displayed, based on the time required for execuation of the original fit:
 
-									<center><img src="images/ProceedAnalysis.png" alt="" width="500" height="400"/></center> 
+									<center><img src="images/ProceedAnalysis.png" alt="" width="600" height="300"/></center></p>
 
 									<p>	Once running, a progress bar shows the current status of the calculation. Closing this window will halt the calculation after completion of the 
 										current fit (but note that for complex fits this may take many minutes!):
-									</p>
 									
-									<center><img src="images/EstimatedTimeRemaining.png" alt="" width="600" height="400"/></center></p>
+									<center><img src="images/EstimatedTimeRemaining.png" alt="" width="600" height="300"/></center></p>
 
-									<p> Once complete, a number of results may be displayed:</p>
+									<p> Once complete, a number of results may be displayed:
 
 									<center><img src="images/ErrorAnalysisSummary.png" alt="" width="600" height="400"/></center></p> 
 
-									<p> The summary of results shows the mean and standard error of parameters determined from the bootstrap analysis:</p>
+									<p>The summary of results shows the mean and standard error of parameters determined from the bootstrap analysis.</p>
 
 									<!-- <center><img src="images/meanstderror.jpg" alt=""/></center></p> -->
 
-									<p> Results of each individual fit may also be tabulated:</p>
+									<p>Results of each individual fit may also be tabulated:
 
 									<center><img src="images/TabulateParameters.png" alt="" width="600" height="400"/></center></p>
 
 									<p> Finally, the correlations between estimates of various parameters may be investigated via the covariance matrix. 
 										The data cursor may be used to explore points of interest. In this case, we observe that estimtes of the Kd are 
-										strongly correlated with the bound state chemical shift:</p>
+										strongly correlated with the bound state chemical shift:
 
 									<center><img src="images/CorrelationPlot.png" alt="" width="600" height="400"/></center></p>
 
-									<p> Upon a more detailed analysis with many more spins however (e.g. the provided example `TITAN_session_fitted.mat`, 
-										based on global analysis of 25 spins), the covariance structure may be improved:</p>
+									<p> Upon a more detailed analysis with many more spins however (e.g. the provided example 'TITAN_session_fitted.mat', 
+										based on global analysis of 25 spins), the covariance structure may be improved.</p>
 
 									<!-- <center><img src="images/improvedcovariance.jpg" alt=""/></center></p> -->
 
