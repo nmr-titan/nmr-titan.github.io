@@ -46,75 +46,100 @@
 				</header>
 
 
+
 				<!-- Main -->
-					<article id="main">
-						<header>
-							<h2>Introduction</h2>
-							<!-- <p>NMR TITAN: 2D lineshape analysis</p> -->
-							<!-- <ul class="actions special small">
-								<li><a href="theory.html" class="button">Theory</a></li>
-								<li><a href="tutorials.html" class="button">Tutorials</a></li>
-								<li><a href="casestudies.html" class="button">Case Studies</a></li>
-								<li><a href="faq.html" class="button">FAQs</a></li>
-							</ul> -->
-						</header>
-						<section class="wrapper style5">
-							<div class="inner">
+				<article id="main">
+					<header>
+						<h2>Introduction</h2>
+						<!-- <p>Subheading</p> -->
+						<ul class="actions special">
+							<li><a href="#what" class="button">What is TITAN?</a></li>
+							<li><a href="#why" class="button">Why use TITAN?</a></li>
+							<li><a href="#users" class="button">Userbase</a></li>
+						</ul>
+					</header>
+					<section class="wrapper style5">
+						<div class="inner">
+<h3 id="what">What is NMR TITAN?</h3>
+<p>
+TITAN is user-friendly software designed for the analysis of 2D NMR titration experiments.
+It stands out by accurately simulating and fitting chemical exchange processes in 2D 
+experiments using a 'virtual spectrometer'. By doing this, TITAN can effectively resolve
+overlapping peaks, and can extract not just binding constants from your
+titration measurements, but can also determine the kinetics of binding, eliminating a major
+source of systematic errors. Moreover, TITAN can fit data to a variety of different binding
+mechanisms like dimerization, competitive binding, induced fit or conformational selection.
+</p><p>
+TITAN software is specifically tailored for NMR 2D lineshape analysis of titration experiments,
+including quantum mechanical simulation of most common pulse sequences and an extensive selection of binding models.
+The streamlined user interface allows novice researchers to quickly gain insights from their titration experiments.
+</p>
+<center><iframe width="560" height="315" src="https://www.youtube.com/embed/gHUtoP4KJnY?si=HqkPUMqGfEugOHV7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> </center>
+<hr />
 
-								<h3>What is NMR Titan?</h3>
-								<p>	NMR TITAN is an easy-to-use software package for the two-dimensional lineshape analysis of titration experiments.
-									By performing a theoretically rigorous analysis of chemical exchange in 2D experiments, TITAN provides many advantages
-									over other analysis methods, eliminating a number of systematic errors, effectively resolving overlapping peaks, advanced
-									allowing data to be fitted to complex binding models such as dimerisation, induced fit or conformational selection. 
-									<a href="https:/www.nature.com/articles/srep24826">Read More</a> or check out the video below.
-								</i> 
-								
-								<div style="text-align:center;"><iframe width = "560" height="315" src="https://www.youtube.com/embed/EzMqGR5Hz2w"></iframe></div>
+<!-- 
+<h3>Introduction to NMR</h3>
+<p>When atoms are placed in a magnetic field , the nuclei can ‘spin’ either with or against the magnetic field. 
+A sample containing the desired compounds is inserted into a strong magnet during NMR spectroscopy. 
+The sample is then exposed to radio waves, which cause the atomic nuclei to absorb energy and change orientation. 
+When the radio waves are turned off, the nuclei return to their natural orientation and release the absorbed energy. 
+This energy release is detected and analysed. Titan processes and analyses NMR data to help interpret complex spectra.</p>
+</p>Biological NMR is a specialised application focused on molecules such as proteins, nucleic acids, 
+carbohydrates and their interactions.
+The samples used in experiments are typically isotopically enriched, meaning that specific atoms within biomolecules have been changed 
+to stable isotopes like carbon-13 and nitrogen-15. NMR signals can be read more easily by selectively labelling certain atoms.</p>
+<hr />
+-->
 
-								<!-- </p><p>
 
-									We are developing improved acquisition
-									schemes and easy-to-use analysis methods, including the popular
-									software package <a href="https://www.nmr-titan.com">NMR TITAN</a>,
-									to extract the fullest possible information
-									from your experimental measurements.</p> -->
+<h3 id="why">Why use NMR TITAN?</h3>
+<p>
+Conventional analyses of NMR titrations require peak positions to be picked at each spectrum in the titration series.
+The resulting chemical shift perturbations can then be fitted to binding isotherms to estimate binding affinities.
+In contrast, TITAN generates series of simulated spectra, within selected regions of interest (ROIs), based on the
+physically meaningful free and bound peak positions only. The apparent progressive movement of peaks across a titration
+then arises naturally as a consequence of the simulated chemical exchange processes.
+</p><p>
+ROIs can be selected to avoid peak overlaps, or multiple peaks can easily be fitted in a group together. The software then
+searches for optimal model parameters (i.e. the binding constant and dissociation rate) and free/bound peak positions
+and linewidths that best reproduce the experimentally-observed input spectra. TITAN conducts a global analyis across all
+selected peaks, to obtain a single binding constant and dissociation rate consistent with the entirety of your data.
+Advanced bootstrap and jackknife error analysis methods are included to ensure that users can extract meaningful insights
+from their data with accuracy and confidence.
+</p>
 
-								<hr />
+<div style="text-align:center;"><iframe width = "560" height="315" src="https://www.youtube.com/embed/EzMqGR5Hz2w"></iframe></div>
 
-								<h3>User Base</h3>
-								<p>
-									The TITAN user base currently spans across 200 labs around the world and continues to grow!
-									Check out the interactive map below to see who is using TITAN.
-								</p>
 
-								<center><iframe src="https://www.google.com/maps/d/embed?mid=1_Ud9R5zgK6CWqfltjwVe_25BWsYgNZcv&ehbc=2E312F" width="640" height="480"></iframe></center>
+<hr />
 
-								<!-- <h4>More detail</h4>
-								<p>Etiam iaculis nulla ipsum, et pharetra libero rhoncus ut. Phasellus rutrum cursus velit, eget condimentum nunc blandit vel. In at pulvinar lectus. Morbi diam ante, vulputate et imperdiet eget, fermentum non dolor. Ut eleifend sagittis tincidunt. Sed viverra commodo mi, ac rhoncus justo. Duis neque ligula, elementum ut enim vel, posuere finibus justo. Vivamus facilisis maximus nibh quis pulvinar. Quisque hendrerit in ipsum id tellus facilisis fermentum. Proin mauris dui, at vestibulum sit amet, auctor bibendum neque.</p> -->
+<h3 id="users">User Base</h3>
+<p>
+The TITAN user base currently spans over 250 labs around the world and continues to grow!
+Check out the interactive map below to see who is using TITAN.
+</p>
 
-								<!-- <hr />
+<center><iframe src="https://www.google.com/maps/d/embed?mid=1_Ud9R5zgK6CWqfltjwVe_25BWsYgNZcv&ehbc=2E312F" width="640" height="480"></iframe></center>
 
-								<h3>How to Download TITAN</h3>
-								<p>
-									TITAN is free for academic users! Please register <a href="https://docs.google.com/forms/d/e/1FAIpQLSeN-FoEdoUlxGZ-H5XfXiYU5wAhJV6U2LCOqr7gh4ZXDadGNQ/viewform">here</a> to download.
-									Registration is processed manually so please be patient while an account is created for you. 
-									Registered users can access the source code repository through Bitbucket and download TITAN.
-								</p>
-								
-								<hr /> -->
-
-							</div>
-						</section>
-					</article>
+	
+								</div>
+							</section>
+						</article>
+						</div>
+					</section>
+				</article>
 
 				<!-- Footer -->
 				<footer id="footer">
 					<ul class="icons">
-						<li><a href="https://www.twitter.com/chris_waudby" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a rel="me" href="https://mstdn.science/@chriswaudby" class="icon brands fa-mastodon"><span class="label">Mastodon</span></a></li>
+							<li><a href="https://www.twitter.com/chris_waudby" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="https://www.youtube.com/channel/UCIy84QJPphDhbNgPyIJZ5aA" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+						<li><a href="https://github.com/waudbygroup/" class="icon brands fa-github"><span class="label">Github</span></a></li>
 						<li><a href="contact.html" class="icon solid fa-envelope"><span class="label">Contact</span></a></li>
 					</ul>
 					<ul class="copyright">
-						<li>&copy; NMR TITAN 2022</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+						<li>&copy; Waudby Group 2023</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
 					</ul>
 				</footer>
 
